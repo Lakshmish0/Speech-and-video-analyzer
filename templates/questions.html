@@ -1,0 +1,25 @@
+{% for question in questions %}
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">
+        <span style="font-size: 25px;">{{ question }}</span>
+        <span class="arrow">&#9660;</span>
+    </div>
+    <div class="dropdown-content">
+
+        <div id="buttons" class="button-grid" style="margin-left: 100px;">
+
+            <button class="startBtn" style="background-color: lightgreen; border-radius: 20px; height: 50px;">Start Recording</button>
+            <button class="stopBtnandTrans" disabled style="background-color: lightcoral; border-radius: 50px; height: 50px;">Stop
+                Recording</button>
+            <button class="repeatBtn" disabled style="background-color: lightblue; border-radius: 20px; width: 100px; height: 50px;">Repeat
+                Again</button>
+            
+        </div>
+        <h3>Transcription Result:</h3>
+        <div class="transcription-result"></div>
+    </div>
+</div>
+<br>
+
+{% endfor %}

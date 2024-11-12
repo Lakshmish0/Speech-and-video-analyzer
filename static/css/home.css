@@ -1,0 +1,68 @@
+
+    body {
+        font-family: Arial, sans-serif;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../mac_os.jpg);
+        background-size: cover;
+        font-family: 'Ramaraja', serif;
+
+    }
+
+    #preview {
+        width: 200px;
+        height: 160px;
+    }
+
+    .button-grid {
+        display: flex;
+        gap: 20px;
+    }
+
+    .dropdown {
+        width: 600px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .dropdown-header {
+        padding: 10px 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #eee;
+    }
+
+    .dropdown-header:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 15px;
+    }
+
+    .dropdown.open .dropdown-content {
+        max-height: 800px;
+        display: grid;
+        /* Adjust based on the content */
+        padding-top: 15px;
+        padding-bottom: 60px;
+    }
+
+    .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .arrow {
+        transform: rotate(180deg);
+    }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video and Audio Capture</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body style="margin: 0;">
+  <header style="margin-left: 40px; height: 70px;">
+    <h1>Speech and Video analyser</h1>
+  </header>
+  <div style="width: 100vw; height: 295px; display: flex;margin-bottom: 15px;">
+    <div
+      style="width: 580px; height: 300px; border: 2px; border-radius: 10px; border-color: black; background-color: azure;border-style: solid;padding-left: 10px; padding-right: 10px; margin-left: 100px;">
+      <h2>Instructions:</h2>
+      <p style="font-size: large; font-weight:500;">
+        <b>1.</b> First, click on the question that you intend to <br> <br>
+        <b>2.</b> Click on the "Start Recording" button <br> <br>
+        <b>3.</b> Read the question first, then proceed to answer it <br> <br>
+        <b>4.</b> After answering the question, click on the "Stop Recording" button <br> <br>
+        <b>5.</b> Wait for the transcription result to be displayed, then move on to the next question
+      </p>
+    </div>
+    <div style="position: relative; width: 600px; margin-left: 120px;">
+      <video id="camera-preview" autoplay muted
+             style="width: 100%; border-radius: 10px;"></video>
+
+      <canvas id="captureCanvas" style="display: none;"></canvas>
+      <img id="processed-output" alt="Processed Output"
+           style="position: absolute; top: 0; left: 0; width: 600px; border-radius: 10px; display: none;">
+    </div>
+  </div>
+  
+  <div style="width: 100vw; height: 45vh; display: flex;">
+    <div style="padding-left: 50px;">
+      <div style="height: 300px;"> {% include "questions.html" %}</div>
+    </div>
+    <div>
+      <button style="background-color: blanchedalmond; width: 200px; height: 40px ;border-radius:10px ;margin-left: 300px; margin-top: 180px;"
+        onclick="window.location.href='/download_pdf'">Print Transcriptions</button>
+    </div>
+  </div>
+
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
