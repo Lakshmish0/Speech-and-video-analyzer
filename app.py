@@ -287,7 +287,7 @@ def get_predefined_answer(transcription):
 
 def send_to_gemini(transcription, response):
     global gemini_results
-    genai.configure(api_key="AIzaSyCs1wMw4RjOrsKcZWPASdx0nNXj2kurGCE")
+    genai.configure(api_key="{api_key}")
     mode = genai.GenerativeModel("gemini-pro")
 
     # Define the prompt for Gemini
